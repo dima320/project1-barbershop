@@ -1,0 +1,9 @@
+/**
+ * style.css — головний файл, підключає всі частини стилів у потрібному порядку.
+ * Підключати в HTML лише цей файл.
+ */
+
+@import url("reset.css");
+@import url("variables.css");
+@import url("layout.css");
+@import url("components.css");

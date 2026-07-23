@@ -1,0 +1,300 @@
+/* components.css — перевикористовувані UI-елементи */
+
+/* ---------- Типографіка ---------- */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+h2, .h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+h3, .h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+p { color: var(--color-text-muted); }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+}
+.logo span { color: var(--color-accent); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.95em 1.9em;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-fast), background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+}
+.btn:active { transform: scale(0.97); }
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #17140F;
+}
+.btn--primary:hover { background: var(--color-accent-hover); }
+
+.btn--ghost {
+  border: 1px solid var(--color-line);
+  color: var(--color-text);
+}
+.btn--ghost:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+/* ---------- Header nav links ---------- */
+.nav__link {
+  position: relative;
+  font-size: var(--fs-small);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width var(--transition-fast);
+}
+.nav__link:hover { color: var(--color-text); }
+.nav__link:hover::after { width: 100%; }
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+}
+.burger span {
+  height: 2px;
+  background: var(--color-text);
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+@media (max-width: 860px) {
+  .burger { display: flex; }
+}
+.burger.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.is-active span:nth-child(2) { opacity: 0; }
+.burger.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- Media placeholder (доки немає реальних фото) ---------- */
+.media-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    repeating-linear-gradient(135deg, var(--color-bg-elevated) 0 14px, var(--color-bg-elevated-2) 14px 28px);
+  color: var(--color-text-dim);
+  font-size: var(--fs-small);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+}
+
+/* ---------- Stat item ---------- */
+.stat__num {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  color: var(--color-accent);
+  line-height: 1;
+}
+.stat__label {
+  margin-top: 0.4em;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Feature card (Про нас) ---------- */
+.feature-card {
+  padding: var(--space-lg);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-line);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+.feature-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+.feature-card__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--space-md);
+  color: var(--color-accent);
+}
+.feature-card h3 { margin-bottom: 0.6em; }
+
+/* ---------- Process step ---------- */
+.step {
+  display: flex;
+  gap: var(--space-md);
+  padding-bottom: var(--space-lg);
+  border-bottom: 1px solid var(--color-line);
+}
+.step:last-child { border-bottom: none; padding-bottom: 0; }
+.step__num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-accent);
+  min-width: 2.4ch;
+}
+
+/* ---------- Service card ---------- */
+.service-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+.service-card__media { aspect-ratio: 4 / 3; }
+.service-card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex: 1;
+}
+.service-card__price {
+  font-family: var(--font-display);
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  margin-top: auto;
+}
+.service-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+/* ---------- Team card ---------- */
+.team-card { text-align: center; }
+.team-card__media {
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+}
+.team-card__role {
+  color: var(--color-text-dim);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Review card ---------- */
+.review-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+}
+.review-card__quote {
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.review-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-accent-deep);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  flex-shrink: 0;
+}
+.review-card__name { font-weight: 700; font-size: var(--fs-small); }
+.review-card__tag { color: var(--color-text-dim); font-size: var(--fs-small); }
+
+/* ---------- Contact card ---------- */
+.info-row {
+  display: flex;
+  gap: var(--space-md);
+  padding-block: var(--space-md);
+  border-bottom: 1px solid var(--color-line);
+}
+.info-row__label {
+  min-width: 120px;
+  color: var(--color-text-dim);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Focus visibility (accessibility) ---------- */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Reveal-on-scroll ---------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
