@@ -6,7 +6,7 @@
   <title>Чоловічий барбершоп в Ужгороді | CLOSED SPACE</title>
   <meta name="description" content="CLOSED SPACE — чоловічий барбершоп в Ужгороді: стрижки, борода та догляд. Підберемо стиль саме під тебе." />
   <meta name="keywords" content="барбершоп Ужгород, чоловіча стрижка Ужгород, борода Ужгород, CLOSED SPACE" />
-  <meta name="theme-color" content="#0C0C0D" />
+  <meta name="theme-color" content="#0A0A0C" />
   <link rel="canonical" href="https://example.com/" />
 
   <!-- Open Graph -->
@@ -59,7 +59,11 @@
   }
   </script>
 </head>
-<body>
+<body class="is-loading">
+
+  <div class="preloader" aria-label="Завантаження сторінки" role="status">
+    <div class="preloader__line"></div>
+  </div>
 
   <!-- Скрол-прогрес (сигнатурна "fade line") -->
   <div class="scroll-progress"><div class="scroll-progress__fill"></div></div>
@@ -71,10 +75,10 @@
 
       <nav class="nav" aria-label="Головна навігація">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#about">Про нас</a></li>
+          <li><a class="nav__link" href="#about">Про мене</a></li>
           <li><a class="nav__link" href="#process">Процес</a></li>
           <li><a class="nav__link" href="#services">Послуги</a></li>
-          <li><a class="nav__link" href="#team">Майстри</a></li>
+          <li><a class="nav__link" href="#team">Майстер</a></li>
           <li><a class="nav__link" href="#reviews">Відгуки</a></li>
           <li><a class="nav__link" href="#contact">Контакти</a></li>
         </ul>
@@ -94,15 +98,15 @@
     <!-- ==================== HERO ==================== -->
     <section class="hero" id="hero">
       <div class="hero__media">
-        <div class="media-placeholder" role="img" aria-label="Фото інтер'єру барбершопу CLOSED SPACE">Фото CLOSED SPACE буде додано з assets/images/hero/</div>
+        <img src="/assets/images/hero/closed-space-hero.jpg" alt="Інтер'єр приватного барбершопу CLOSED SPACE" />
       </div>
       <div class="hero__overlay"></div>
 
       <div class="container hero__content">
-        <p class="eyebrow">Барбершоп в Ужгороді</p>
+        <p class="eyebrow">Приватний барбершоп · Ужгород</p>
         <h1>CLOSED<br />SPACE</h1>
         <p style="margin-top: var(--space-md); max-width: 46ch;">
-          Підберемо стиль саме під тебе 🔥
+          Один майстер. Повна увага до деталей. Твій стиль — без поспіху й компромісів.
         </p>
 
         <div class="hero__ctas">
@@ -112,20 +116,16 @@
 
         <div class="stats">
           <div class="stat">
-            <div class="stat__num"><span data-count="1200" data-suffix="+">0+</span></div>
-            <div class="stat__label">клієнтів</div>
+            <div class="stat__num">01</div>
+            <div class="stat__label">майстер</div>
           </div>
           <div class="stat">
-            <div class="stat__num"><span data-count="7" data-suffix="+">0+</span></div>
-            <div class="stat__label">років досвіду</div>
+            <div class="stat__num">1:1</div>
+            <div class="stat__label">індивідуальний підхід</div>
           </div>
           <div class="stat">
-            <div class="stat__num"><span data-count="5000" data-suffix="+">0+</span></div>
-            <div class="stat__label">стрижок</div>
-          </div>
-          <div class="stat">
-            <div class="stat__num">24/7</div>
-            <div class="stat__label">запис онлайн</div>
+            <div class="stat__num">100%</div>
+            <div class="stat__label">уваги до деталей</div>
           </div>
         </div>
       </div>
@@ -135,38 +135,36 @@
     <section id="about">
       <div class="container">
         <div class="section-head" data-reveal>
-          <p class="eyebrow">Про нас</p>
-          <h2>Місце для образу</h2>
+          <p class="eyebrow">Про мене</p>
+          <h2>Твій образ — моя відповідальність</h2>
           <p style="margin-top: var(--space-sm);">
-            CLOSED SPACE в Ужгороді — про рішення, а не галас: форма, ритм і догляд там,
-            де це реально має сенс для тебе. Без шаблонних «історій бренду» — лише зрозумілий
-            сервіс і охайний результат.
+            CLOSED SPACE — це авторський сервіс одного майстра. Я працюю з тобою особисто: від першої
+            консультації до фінального контуру. Без конвеєра, зайвого шуму та випадкових рішень.
           </p>
         </div>
 
         <div class="grid-3">
           <div class="feature-card" data-reveal>
             <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M5 8h14M5 16h14" stroke-linecap="round"/></svg>
-            <h3>Простір</h3>
-            <p>Затишний зал і спокійний темп: час тільки для тебе й майстра, без зайвого шуму.</p>
+            <h3>Приватність</h3>
+            <p>Твій час у кріслі — лише для тебе. Спокійний ритм, без черги та поспіху.</p>
           </div>
           <div class="feature-card" data-reveal>
             <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <h3>Пояснення</h3>
-            <p>Показуємо логіку кроків і варіанти — ти розумієш, що відбувається, а не просто «довіряй».</p>
+            <h3>Точність</h3>
+            <p>Кожен перехід, лінія та контур — під контролем одного майстра від початку до кінця.</p>
           </div>
           <div class="feature-card" data-reveal>
             <svg class="feature-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12l5 5L20 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <h3>Результат</h3>
-            <p>Чисті лінії й охайний вигляд, який легко підтримувати між візитами.</p>
+            <h3>Твій стиль</h3>
+            <p>Не шаблонна стрижка, а форма, яка працює з твоїм характером і способом життя.</p>
           </div>
         </div>
 
         <div class="gallery" style="margin-top: var(--space-xl);" data-reveal>
-          <div class="gallery__item gallery__item--wide gallery__item--tall"><div class="media-placeholder">Фото залу<br/>(1200×800)</div></div>
-          <div class="gallery__item"><div class="media-placeholder">Фото крісла<br/>(800×600)</div></div>
-          <div class="gallery__item"><div class="media-placeholder">Деталі інтер'єру<br/>(800×600)</div></div>
-          <div class="gallery__item gallery__item--wide"><div class="media-placeholder">Панорама залу<br/>(1200×600)</div></div>
+          <div class="gallery__item gallery__item--wide gallery__item--tall"><img src="/assets/images/gallery/closed-space-interior-01.jpg" alt="Точна робота з бородою в CLOSED SPACE" loading="lazy" /></div>
+          <div class="gallery__item gallery__item--wide"><img src="/assets/images/gallery/closed-space-interior-02.jpg" alt="Професійні інструменти майстра CLOSED SPACE" loading="lazy" /></div>
+          <div class="gallery__item gallery__item--wide"><img src="/assets/images/gallery/closed-space-interior-03.jpg" alt="Деталь точної чоловічої стрижки" loading="lazy" /></div>
         </div>
       </div>
     </section>
@@ -180,7 +178,7 @@
         </div>
 
         <div class="process">
-          <div class="media-placeholder" style="aspect-ratio: 4/5;" data-reveal>Фото: майстер за роботою<br/>(900×1100)</div>
+          <img class="process__media" src="/assets/images/process/closed-space-process.jpg" alt="Точне оформлення бороди небезпечною бритвою" loading="lazy" data-reveal />
 
           <div class="process__steps" data-reveal>
             <div class="step">
@@ -215,7 +213,7 @@
         </div>
 
         <div class="final-cta" style="margin-top: var(--space-xl);" data-reveal>
-          <p>Готовий почати свій візит?</p>
+          <p>Обери час для персонального візиту.</p>
           <div class="final-cta__actions">
             <a class="btn btn--primary" data-booking-link href="https://closedspace.easyweek.com.ua/" target="_blank" rel="noopener noreferrer">Записатися</a>
           </div>
@@ -229,7 +227,7 @@
         <div class="section-head" data-reveal>
           <p class="eyebrow">Наші послуги</p>
           <h2>Послуги</h2>
-          <p style="margin-top: var(--space-sm);">Стрижка, борода та комплексний догляд — чітко, акуратно, без зайвого.</p>
+          <p style="margin-top: var(--space-sm);">Персонально підібрана послуга, точна робота й жодного зайвого руху.</p>
         </div>
 
         <div class="grid-3" data-reveal>
@@ -306,38 +304,23 @@
           </article>
         </div>
 
-        <p style="text-align:center; margin-top: var(--space-lg); font-size: var(--fs-small);">Ціна залежить від категорії майстра</p>
+        <p style="text-align:center; margin-top: var(--space-lg); font-size: var(--fs-small);">Вартість і доступний час — в онлайн-записі.</p>
       </div>
     </section>
 
-    <!-- ==================== КОМАНДА ==================== -->
+    <!-- ==================== МАЙСТЕР ==================== -->
     <section id="team">
       <div class="container">
         <div class="section-head section-head--center" data-reveal>
-          <p class="eyebrow">Команда</p>
-          <h2>Майстри</h2>
+          <p class="eyebrow">Мій підхід</p>
+          <h2>Один майстер. Один стандарт.</h2>
         </div>
 
-        <div class="grid-4" data-reveal>
+        <div class="grid-3 master-card" data-reveal>
           <div class="team-card">
-            <div class="team-card__media media-placeholder">Фото майстра</div>
-            <h3>[Ім'я майстра]</h3>
-            <p class="team-card__role">Барбер</p>
-          </div>
-          <div class="team-card">
-            <div class="team-card__media media-placeholder">Фото майстра</div>
-            <h3>[Ім'я майстра]</h3>
-            <p class="team-card__role">Барбер</p>
-          </div>
-          <div class="team-card">
-            <div class="team-card__media media-placeholder">Фото майстра</div>
-            <h3>[Ім'я майстра]</h3>
-            <p class="team-card__role">Барбер</p>
-          </div>
-          <div class="team-card">
-            <div class="team-card__media media-placeholder">Фото майстра</div>
-            <h3>[Ім'я майстра]</h3>
-            <p class="team-card__role">Барбер</p>
+            <div class="master-card__mark" aria-hidden="true">01</div>
+            <h3>Персональна робота</h3>
+            <p class="team-card__role">Від консультації до фінального штриха — один майстер і повна відповідальність за результат.</p>
           </div>
         </div>
       </div>
@@ -389,7 +372,7 @@
         <div class="section-head section-head--center" data-reveal>
           <p class="eyebrow">Запис</p>
           <h2>Готовий до нового стилю?</h2>
-          <p style="margin-top: var(--space-sm);">Обери онлайн-запис або зателефонуй — підкажемо час і послугу.</p>
+          <p style="margin-top: var(--space-sm);">Обери зручний час онлайн — я підготуюсь до твого візиту персонально.</p>
         </div>
 
         <div class="contact" data-reveal>
@@ -429,8 +412,8 @@
         <a href="#hero" class="logo">CLOSED SPACE<span>.</span></a>
         <nav class="footer__nav" aria-label="Навігація у футері">
           <a class="nav__link" href="#services">Послуги</a>
-          <a class="nav__link" href="#about">Про нас</a>
-          <a class="nav__link" href="#team">Команда</a>
+          <a class="nav__link" href="#about">Про мене</a>
+          <a class="nav__link" href="#team">Майстер</a>
           <a class="nav__link" href="#reviews">Відгуки</a>
           <a class="nav__link" href="#contact">Контакти</a>
         </nav>

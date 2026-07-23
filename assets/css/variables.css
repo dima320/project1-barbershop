@@ -1,27 +1,27 @@
 /**
  * variables.css — токени дизайну
- * Ідея: тепле "сталево-латунне" барберське поєднання замість
- * шаблонного чорно-зеленого/чорно-помаранчевого.
+ * Приватний преміальний формат: глибокий графіт і точний червоний акцент.
  */
 
 :root {
   /* ---------- Колір ---------- */
-  --color-bg:            #0C0C0D;  /* глибокий вугільно-чорний, не чистий #000 */
-  --color-bg-elevated:   #17181A;  /* картки, підняті поверхні */
-  --color-bg-elevated-2: #1F2123;  /* hover-стан карток */
-  --color-line:          #2B2C2E;  /* тонкі розділювачі */
+  --color-bg:            #0A0A0C;
+  --color-bg-elevated:   #121216;
+  --color-bg-elevated-2: #18181D;
+  --color-line:          #27272A;
 
-  --color-text:          #F3EFE7;  /* теплий білий (не чисто-білий) */
-  --color-text-muted:    #9C978C;  /* другорядний текст */
-  --color-text-dim:      #6C6862;  /* підписи, лейбли */
+  --color-text:          #F4F4F5;
+  --color-text-muted:    #A1A1AA;
+  --color-text-dim:      #71717A;
 
-  --color-accent:        #C08A3E;  /* латунь/сталь бритви — фірмовий акцент */
-  --color-accent-hover:  #D9A257;
-  --color-accent-deep:   #7A511F;
+  --color-accent:        #E50914;
+  --color-accent-hover:  #FF2630;
+  --color-accent-deep:   #991B1B;
 
-  --color-stripe-a:      #C08A3E; /* сигнатурна смуга "fade line" */
-  --color-stripe-b:      #8C2A22; /* приглушений барбер-червоний */
-  --color-stripe-c:      #F3EFE7;
+  --color-stripe-a:      #E50914;
+  --color-stripe-b:      #991B1B;
+  --color-stripe-c:      #F4F4F5;
+  --shadow-glow:         0 0 20px rgba(229, 9, 20, 0.35);
 
   /* ---------- Типографіка ---------- */
   --font-display: "Bebas Neue", "Oswald", sans-serif; /* гострий, "лезовий" заголовковий шрифт */

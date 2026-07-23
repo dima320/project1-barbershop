@@ -9,6 +9,14 @@ import { initHeaderScrollState, initMobileNav, initScrollProgress, initScrollRev
 import { initCounters } from "./counters.js";
 import { initSlider } from "./slider.js";
 
+function hidePreloader() {
+  const preloader = document.querySelector(".preloader");
+  if (!preloader) return;
+
+  preloader.classList.add("is-hidden");
+  window.setTimeout(() => document.body.classList.remove("is-loading"), 400);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Підставляємо динамічні посилання/контакти з config.js у розмітку
   document.querySelectorAll("[data-booking-link]").forEach((el) => {
@@ -30,3 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelector(".footer__year").textContent = new Date().getFullYear();
 });
+
+window.addEventListener("load", hidePreloader, { once: true });
+
+if (document.readyState === "complete") hidePreloader();
