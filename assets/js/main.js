@@ -11,10 +11,10 @@ import { initSlider } from "./slider.js";
 
 function hidePreloader() {
   const preloader = document.querySelector(".preloader");
-  if (!preloader) return;
+  if (!preloader || preloader.classList.contains("is-hidden")) return;
 
   preloader.classList.add("is-hidden");
-  window.setTimeout(() => document.body.classList.remove("is-loading"), 400);
+  window.setTimeout(() => document.body.classList.remove("is-loading"), 350);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -37,8 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initSlider("[data-slider='reviews']");
 
   document.querySelector(".footer__year").textContent = new Date().getFullYear();
+
+  // Достатньо часу для фірмового спалаху, без очікування повного завантаження сторонніх ресурсів.
+  window.setTimeout(hidePreloader, 760);
 });
 
-window.addEventListener("load", hidePreloader, { once: true });
+// Захист від зависання прелоадера, якщо браузер затримує завантаження зовнішнього ресурсу.
+window.setTimeout(hidePreloader, 1800);
 
 if (document.readyState === "complete") hidePreloader();

@@ -8,11 +8,18 @@ function initHeaderScrollState() {
   const header = document.querySelector(".header");
   if (!header) return;
 
-  const onScroll = () => {
+  let scheduled = false;
+  const update = () => {
     header.classList.toggle("is-scrolled", window.scrollY > 12);
+    scheduled = false;
+  };
+  const onScroll = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(update);
   };
 
-  onScroll();
+  update();
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
@@ -42,15 +49,22 @@ function initScrollProgress() {
   const fill = document.querySelector(".scroll-progress__fill");
   if (!fill) return;
 
+  let scheduled = false;
   const update = () => {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     fill.style.width = `${progress}%`;
+    scheduled = false;
+  };
+  const onScroll = () => {
+    if (scheduled) return;
+    scheduled = true;
+    window.requestAnimationFrame(update);
   };
 
   update();
-  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", update);
 }
 
