@@ -241,15 +241,23 @@ section {
   .header__actions .btn { display: none; }
 }
 
-/* ---------- Gallery (справжня masonry: фото завжди повністю, без обрізки) ---------- */
+/* ---------- Gallery (masonry, балансується скриптом gallery.js за data-aspect) ---------- */
 .gallery {
-  column-count: 4;
-  column-gap: var(--space-sm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+.gallery__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+  min-width: 0;
 }
 .gallery__item {
   display: block;
-  break-inside: avoid;
-  margin-bottom: var(--space-sm);
+  flex: 1 1 260px; /* фолбек-розкладка, якщо JS не спрацював і .gallery__col немає */
   overflow: hidden;
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
@@ -265,15 +273,6 @@ section {
 .gallery__item:hover img {
   transform: scale(1.04);
   filter: grayscale(0.18) saturate(0.82) contrast(1.1) brightness(0.86);
-}
-@media (max-width: 900px) {
-  .gallery { column-count: 3; }
-}
-@media (max-width: 700px) {
-  .gallery { column-count: 2; }
-}
-@media (max-width: 460px) {
-  .gallery { column-count: 1; }
 }
 
 /* ---------- Process ---------- */

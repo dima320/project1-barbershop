@@ -8,6 +8,7 @@
 import { initHeaderScrollState, initMobileNav, initScrollProgress, initScrollReveal } from "./navigation.js";
 import { initCounters } from "./counters.js";
 import { initSlider } from "./slider.js";
+import { initGalleryMasonry } from "./gallery.js";
 
 function hidePreloader() {
   const preloader = document.querySelector(".preloader");
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderScrollState();
   initMobileNav();
   initScrollProgress();
+  initGalleryMasonry();
   initScrollReveal();
   initCounters();
   initSlider("[data-slider='reviews']");
