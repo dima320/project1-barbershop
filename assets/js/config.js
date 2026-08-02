@@ -9,7 +9,7 @@
 
 const SITE_CONFIG = {
   // Посилання на сторонній сервіс онлайн-запису (Alteg.io, Booksy тощо)
-  bookingUrl: "https://closedspace.easyweek.com.ua/",
+  bookingUrl: "https://n1455949.alteg.io/company/1383862/personal/menu?o=",
 
   // Контакти
   phone: "+380734716407",
